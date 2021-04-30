@@ -4,6 +4,7 @@ class Vector{
     }
     add(y){
         var r=[]
+        var x=this
         for(var i=0;i<x.a.length;i++)
         {
             r[i] = x.a[i]+y.a[i]
@@ -13,6 +14,7 @@ class Vector{
 
     sub(y){
         var r=[]
+        var x=this
         for(var i=0;i<x.a.length;i++)
         {
             r[i] = x.a[i]-y.a[i]
@@ -22,6 +24,7 @@ class Vector{
 
     dot(y){
         var r=[]
+        var x=this
         var n=0
         for(var i=0;i<x.a.length;i++)
         {
@@ -33,6 +36,7 @@ class Vector{
 
     neg(y){
         var r=[]
+        var x=this
         for(var i=0;i<x.a.length;i++)
         {
             r[i] = -x.a[i]
