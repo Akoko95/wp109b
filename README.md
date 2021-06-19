@@ -10,4 +10,17 @@
 課程內容 | https://gitlab.com/ccc109/w
 網站 | [Ako's Web]()
 筆記 | [我的筆記](https://github.com/Akoko95/wp109b/wiki/Note)
-week1 |
+I | []()
+II | []()
+III | []()
+IV | []()
+V | []()
+VI | []()
+VII | []()
+VIII | []()
+IX | []()
+X | []()
+XI | []()
+XII | []()
+XIII | []()
+XIV | []()
