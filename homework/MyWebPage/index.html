@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>AKO_N-Puzzle</title>
+        <script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/nggpt.js"></script>
+		<link href="css/nggpt.css" type="text/css" rel="stylesheet" />
+		<link href='https://fonts.googleapis.com/css?family=Nova Round' rel='stylesheet'>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+				user-select:none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="title" class="box">
+			<div class="tbox" id="zb" title="Click here to restore">N _ Puzzle</div>
+			<div class="tbox">
+				<select id="n1" class="tbox" style="font-family: Nova Round;"></select>
+				<select id="n2" class="tbox" style="font-family: Nova Round;"></select>
+				<input id="img" type="file" accept="image/*" class="tbox" />
+				<label class="tbox" id="fimg" for="img">Import</label>
+				<button id="btn" class="tbox" style="font-family: Nova Round;">Generate</button>
+			</div>
+		</div>
+		<div id="game" class="box">
+			<div id="bg"></div>
+			<div id="box"></div>
+		</div>
+	</body>
+</html>
+<script>
+	$(function(){
+		$("#btn").click();
+	})
+</script>
+

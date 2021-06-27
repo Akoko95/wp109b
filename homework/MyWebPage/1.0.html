@@ -1,15 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Baumans' rel='stylesheet'>
 <style>
-    body {background-color: #716e77;font-style: inherit;}
-    h1 {color:#e79686 ;text-align: center;}
+body {
+    font-family: 'Baumans';font-size: 22px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: linear-gradient(to right, rgb(150, 163, 202) , rgb(44, 74, 102));
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #6b7b86;
+}
+
+#grad1 {
+
+  background-image: linear-gradient(to right, rgb(150, 163, 202) , rgb(44, 74, 102));
+}
+
 </style>
 </head>
 <body>
 
-<h1><b><del>110810527</del></b></h1>
-<center><img src="C:\Users\user\Desktop\picture\smile.jpg"></center>
-</body>
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#game">Game</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+<p>Penguin King</p>
 
+<div id="grad1"></div>
+</body>
 </html>
