@@ -1,11 +1,11 @@
 $(function() {
 	const c1 = 21
-	//首先给选择的内容填充下拉框
+	//choice dropdown
 	for (var i = 3; i <= c1; i++) {
 		$("<option value='" + i + "'>" + i + "</option>").appendTo($("#n1,#n2"));
 	}
-	//选择了正确的图片之后，将其存入缓存之中，并且反映出效果
-	var imgurl = "img/smile.jpg"; //这里存图片的base64格式的地址
+	//選擇了正確的圖片之後，將其存入緩存之中，並且反映出效果
+	var imgurl = "img/smile.jpg"; //存圖片的base64格式的地址
 	$("#img").change(function() {
 		//然后假如这条数据有效，那么久进入替换背景图和拼图原图，并且在此期间禁止操作
 		var file = $(this)[0].files[0];
@@ -23,8 +23,8 @@ $(function() {
 			})
 		}
 	})
-	//点击生成拼图的大概流程
-	//生成乱序表，然后渲染正确的图块，帮上正确的方向事件
+	//點擊並生成拼圖的大概流程
+	//生成亂序表，然後渲染正確的圖塊以幫助正確的方向事件
 	var x = 3;
 	var y = 3;
 	$("#btn").click(function() {
@@ -34,11 +34,11 @@ $(function() {
 	})
 
 	function drawgame() {
-		drawbox(); //把容器绘制到对应大小
-		var arr = getarr(); //获得有解的随机数组顺序
-		drawgrid(arr); //给容器之中填充每个图块
+		drawbox(); //將九宮格繪製到對應大小
+		var arr = getarr(); //獲得隨機數組順序
+		drawgrid(arr); //在九宮格中填充每個圖塊
 	}
-	$(document).keydown(function(e) { //鼠标动作
+	$(document).keydown(function(e) { //方向鍵控制相對應圖形移動
 		var t2 = gett2();
 		if ((e.keyCode == 87 || e.keyCode == 38) && t2 <= (x - 1) * y) { //上
 			thechange(t2 + x, t2);
@@ -66,7 +66,7 @@ $(function() {
 			item.css(getpos(t1));
 		})
 	})
-	function iswin() { //判断是否完全拼好
+	function iswin() { //判斷是否完成
 		var arr = $(".item").getarr();
 		var flag = true;
 		for(var i = 0;i<arr.length;i++){
@@ -81,12 +81,12 @@ $(function() {
 	}
 
 	function thechange(i1, i2) {
-		//将i1位置的图块移动到i2位置
+		//將i1位置的拼圖移動到i2位置
 		the(i1).stop().animate(getpos(i2), 100);
 		the(i1).attr("data-t2", i2);
 	}
 
-	function gett2() { //获得空位置的t2
+	function gett2() { //取得空位置的t2
 		var t2 = -1;
 		for (var i = 1; i <= x * y; i++) {
 			if (the(i).length == 0) {
@@ -96,7 +96,7 @@ $(function() {
 		}
 		return t2;
 	}
-	//一个根据下标返回控制对象的方法
+	//一個根據下標返回控制對象的方法
 	function the(e) {
 		return $(".item[data-t2='" + e + "']");
 	}
@@ -104,12 +104,12 @@ $(function() {
 	function drawgrid(arr) {
 		$("#box").find(".item").remove();
 		for (var i = 0; i < arr.length; i++) {
-			var t1 = arr[i]; //这是这个图块本身位置
-			var t2 = i + 1; //这个是当前的位置；
+			var t1 = arr[i]; //拼圖正確位置
+			var t2 = i + 1; //當前位置
 			var $item = $("<div class='item' data-t1='" + t1 + "' data-t2='" + t2 + "'></div>");
 			$item.appendTo($("#box"));
-			$item.css(getpos(t2)) //根据当前位置将图块定位到正确的地方
-			$item.css(setpic(t1)) //这个这个图块里面具体是哪一部分
+			$item.css(getpos(t2)) //根據當前位置將拼圖定位到正確的地方
+			$item.css(setpic(t1)) //這個圖塊裡面具體是哪一部分
 		}
 	}
 
